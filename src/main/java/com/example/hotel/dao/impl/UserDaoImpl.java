@@ -2,6 +2,7 @@ package com.example.hotel.dao.impl;
 
 import com.example.hotel.dao.DaoException;
 import com.example.hotel.dao.UserDao;
+import com.example.hotel.dao.mapper.UserMapper;
 import com.example.hotel.entity.User;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -29,7 +30,9 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User read(Long id) throws DaoException {
-        return null;
+        String sql = "SELECT * FROM `user` WHERE id = ?";
+        User user = (User) jdbcTemplate.queryForObject(sql, new Object[]{id}, new UserMapper());
+        return user;
     }
 
     @Override
