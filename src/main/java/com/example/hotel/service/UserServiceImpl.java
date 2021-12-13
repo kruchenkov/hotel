@@ -1,10 +1,19 @@
 package com.example.hotel.service;
 
+import com.example.hotel.dao.UserDao;
+import com.example.hotel.dao.impl.UserDaoImpl;
 import com.example.hotel.entity.User;
 
 import java.util.List;
 
 public class UserServiceImpl implements UserService{
+
+    private UserDao userDao;
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+
     @Override
     public List<User> findAll() throws ServiceException {
         return null;
