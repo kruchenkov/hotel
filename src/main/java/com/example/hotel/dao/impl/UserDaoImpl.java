@@ -3,12 +3,15 @@ package com.example.hotel.dao.impl;
 import com.example.hotel.dao.DaoException;
 import com.example.hotel.dao.UserDao;
 import com.example.hotel.entity.User;
+import org.springframework.jdbc.core.JdbcTemplate;
 
+import javax.sql.DataSource;
 import java.util.List;
 
 public class UserDaoImpl implements UserDao {
 
-
+    private DataSource dataSource;
+    private JdbcTemplate jdbcTemplate;
 
     @Override
     public Long create(User entity) throws DaoException {
