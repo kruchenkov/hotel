@@ -21,8 +21,10 @@ public class UserDaoImpl implements UserDao {
 
 
     @Override
-    public Long create(User entity) throws DaoException {
-        return null;
+    public Long create(User user) throws DaoException {
+        String sql = "INSERT INTO `user` (`login`, `password`, `role`) VALUES (?, ?, ?)";
+        jdbcTemplate.update(sql, user.getLogin(), user.getPassword(), user.getRole().ordinal());
+        return user.getId();
     }
 
     @Override
@@ -31,7 +33,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void update(User entity) throws DaoException {
+    public void update(User user) throws DaoException {
 
     }
 
