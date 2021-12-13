@@ -57,6 +57,12 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public void delete(List<Long> ids) throws ServiceException {
-
+        try {
+            for (Long id : ids) {
+                userDao.delete(id);
+            }
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
     }
 }
