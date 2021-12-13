@@ -35,7 +35,15 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public void saveUser(User user) throws ServiceException {
-
+        try {
+            if (user.getId() != null) {
+                userDao.update(user);
+            } else {
+                userDao.create(user);
+            }
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
     }
 
     @Override
