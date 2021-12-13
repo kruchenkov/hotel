@@ -5,7 +5,6 @@ import com.example.hotel.dao.UserDao;
 import com.example.hotel.dao.mapper.UserMapper;
 import com.example.hotel.entity.User;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 import java.util.List;
@@ -59,7 +58,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public User findByLoginAndPassword(String login, String password) throws DaoException {
         String sql = "SELECT * FROM user WHERE login = ? AND password = ? ";
-        User user = (User) jdbcTemplate.queryForObject(sql, new Object[]{login, password}, new UserMapper());
+        User user = jdbcTemplate.queryForObject(sql, new Object[]{login, password}, new UserMapper());
         return user;
     }
 }
