@@ -58,6 +58,8 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User findByLoginAndPassword(String login, String password) throws DaoException {
-        return null;
+        String sql = "SELECT * FROM user WHERE login = ? AND password = ? ";
+        User user = (User) jdbcTemplate.queryForObject(sql, new Object[]{login, password}, new UserMapper());
+        return user;
     }
 }
