@@ -6,8 +6,7 @@ import com.example.hotel.dao.impl.UserDaoImpl;
 import com.example.hotel.entity.User;
 import com.example.hotel.service.ServiceException;
 import com.example.hotel.service.UserService;
-import com.example.hotel.service.UserServiceImpl;
-import org.springframework.context.ApplicationContext;
+import com.example.hotel.service.impl.UserServiceImpl;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

@@ -1,13 +1,15 @@
-package com.example.hotel.service;
+package com.example.hotel.service.impl;
 
 import com.example.hotel.dao.DaoException;
 import com.example.hotel.dao.UserDao;
 import com.example.hotel.dao.impl.UserDaoImpl;
 import com.example.hotel.entity.User;
+import com.example.hotel.service.ServiceException;
+import com.example.hotel.service.UserService;
 
 import java.util.List;
 
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     private UserDao userDao;
 
