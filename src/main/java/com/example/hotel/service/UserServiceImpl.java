@@ -1,5 +1,6 @@
 package com.example.hotel.service;
 
+import com.example.hotel.dao.DaoException;
 import com.example.hotel.dao.UserDao;
 import com.example.hotel.dao.impl.UserDaoImpl;
 import com.example.hotel.entity.User;
@@ -16,7 +17,11 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public List<User> findAll() throws ServiceException {
-        return null;
+        try {
+            return userDao.readAll();
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
     }
 
     @Override
