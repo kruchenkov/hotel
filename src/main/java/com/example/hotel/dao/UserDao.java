@@ -1,4 +1,6 @@
 package com.example.hotel.dao;
 
-public interface UserDao {
+import com.example.hotel.entity.User;
+
+public interface UserDao extends Dao<User>{
 }
