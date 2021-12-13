@@ -1,6 +1,8 @@
 package com.example.hotel.entity;
 
-public class User extends Entity {
+import java.io.Serializable;
+
+public class User extends Entity implements Serializable {
     private String login;
     private String password;
     private Role role;
