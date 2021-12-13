@@ -26,7 +26,11 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User findById(Long id) throws ServiceException {
-        return null;
+        try {
+            return userDao.read(id);
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
     }
 
     @Override
