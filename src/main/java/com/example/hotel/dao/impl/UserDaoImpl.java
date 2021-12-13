@@ -4,6 +4,7 @@ import com.example.hotel.dao.DaoException;
 import com.example.hotel.dao.UserDao;
 import com.example.hotel.entity.User;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 import java.util.List;
@@ -12,6 +13,12 @@ public class UserDaoImpl implements UserDao {
 
     private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
+
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
+    }
+
 
     @Override
     public Long create(User entity) throws DaoException {
