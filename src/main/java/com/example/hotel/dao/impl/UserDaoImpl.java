@@ -51,7 +51,9 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void delete(Long id) throws DaoException {
-
+        String sql = "DELETE FROM `user` WHERE id = ?";
+        jdbcTemplate.update(sql, id);
+        System.out.println("User with id = " + id + " removed");
     }
 
     @Override
