@@ -7,6 +7,9 @@ import com.example.hotel.entity.User;
 import java.util.List;
 
 public class UserDaoImpl implements UserDao {
+
+
+
     @Override
     public Long create(User entity) throws DaoException {
         return null;
