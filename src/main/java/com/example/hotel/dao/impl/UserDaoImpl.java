@@ -36,6 +36,13 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
+    public List<User> readAll() throws DaoException {
+        String sql = "SELECT * FROM `user`";
+        List<User> users = jdbcTemplate.query(sql, new UserMapper());
+        return users;
+    }
+
+    @Override
     public void update(User user) throws DaoException {
 
     }
@@ -43,11 +50,6 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void delete(Long id) throws DaoException {
 
-    }
-
-    @Override
-    public List<User> readAll() throws DaoException {
-        return null;
     }
 
     @Override
