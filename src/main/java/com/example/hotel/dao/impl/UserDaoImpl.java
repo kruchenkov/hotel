@@ -44,7 +44,9 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void update(User user) throws DaoException {
-
+        String sql = "UPDATE `user` SET login = ?, password = ?, role = ? WHERE id = ?";
+        jdbcTemplate.update(sql, user.getLogin(), user.getPassword(), user.getRole().ordinal(), user.getId());
+        System.out.println("User updated");
     }
 
     @Override
