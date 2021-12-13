@@ -1,4 +1,4 @@
 package com.example.hotel.entity;
 
-public class Entity {
+public abstract class Entity {
 }
