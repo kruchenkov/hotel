@@ -1,4 +1,4 @@
 package com.example.hotel.entity;
 
-public class User {
+public class User extends Entity{
 }
