@@ -1,4 +1,6 @@
 package com.example.hotel.servlet.user;
 
-public class UserListController {
+import javax.servlet.http.HttpServlet;
+
+public class UserListController extends HttpServlet {
 }
