@@ -12,4 +12,13 @@
         <servlet-name>UserListController</servlet-name>
         <url-pattern>/list</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserDeleteController</servlet-name>
+        <servlet-class>com.example.hotel.servlet.user.UserDeleteController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserDeleteController</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
 </web-app>
