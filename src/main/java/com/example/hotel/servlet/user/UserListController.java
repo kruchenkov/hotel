@@ -24,7 +24,7 @@ public class UserListController extends HttpServlet {
         try {
             List<User> users = userService.findAll();
             req.setAttribute("users", users);
-            req.getRequestDispatcher("/WEB-INF/jsp/list.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/jsp/user/list.jsp").forward(req, resp);
         } catch (ServiceException e) {
             throw new ServletException(e);
         }

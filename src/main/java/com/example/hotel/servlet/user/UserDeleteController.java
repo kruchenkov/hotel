@@ -1,4 +1,6 @@
 package com.example.hotel.servlet.user;
 
-public class UserDeleteController {
+import javax.servlet.http.HttpServlet;
+
+public class UserDeleteController extends HttpServlet {
 }
