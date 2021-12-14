@@ -21,4 +21,13 @@
         <servlet-name>UserDeleteController</servlet-name>
         <url-pattern>/delete</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserEditController</servlet-name>
+        <servlet-class>com.example.hotel.servlet.user.UserEditController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserEditController</servlet-name>
+        <url-pattern>/edit</url-pattern>
+    </servlet-mapping>
 </web-app>
