@@ -17,7 +17,15 @@ public class Runner {
         ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext("/jdbc-context-xml.xml", "/service-context-xml.xml");
         UserDao userDao = ctx.getBean("userDao", UserDaoImpl.class);
         UserService userService = ctx.getBean("userService", UserServiceImpl.class);
-
+        /*
+         * wefwefwe
+         * fwe
+         * fw
+         * ef
+         * we
+         * f
+         * we
+         * f*/
         User user;
 
         List<User> users = userService.findAll();
@@ -25,6 +33,7 @@ public class Runner {
             System.out.println(user1);
         }
 
+        System.out.println("\n");
         user = userService.login("John", "1234");
         System.out.println(user);
     }
